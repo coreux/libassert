@@ -20,4 +20,5 @@ LDADD = ${top_builddir}/libassert.la
 noinst_PROGRAMS = \
 	assert-1 \
 	assert-2 \
-	assert-3
+	assert-3 \
+	assert-4

@@ -20,19 +20,22 @@ http://pubs.opengroup.org/onlinepubs/009695399/basedefs/assert.h.html
 
 # undef assert
 
-/* Conditionally perform a diagnostic abort */
-# ifdef NDEBUG
-#  define assert(ignore)               ((void) 0)
-# else
-#  define assert(expr)                 ((void) ((expr) ? 0 : __ux_assert(#expr, __FILE__, __LINE__)))
-
 #ifndef __UX_ASSERT_H
 # define __UX_ASSERT_H                 1
 
+# include <ux/cdefs.h>
+
 __UX_BEGIN_DECLS
 
-void __ux_assert(const char *expr, const char *file, unsigned int line) __UX_SYM03(assert);
+void __ux_assert(const char *expr, const char *file, unsigned int line, const char *func) __UX_SYM03(assert);
 
 __UX_END_DECLS
 
 #endif /*!__UX_ASSERT_H_*/
+
+/* Conditionally perform a diagnostic abort */
+# ifdef NDEBUG
+#  define assert(ignore)               ((void) 0)
+# else
+#  define assert(expr)                 ((void) ((expr) ? 0 : __ux_assert(#expr, __FILE__, __LINE__, __func__)))
+# endif

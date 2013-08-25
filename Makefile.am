@@ -30,4 +30,4 @@ libassert_la_CPPFLAGS = @AM_CPPFLAGS@ @UX_CPPFLAGS@
 dist_doc_DATA = LICENSE-2.0
 
 tests: all
-	$(PERL) ${srcdir}/test.pl < tests.conf
+	$(PERL) ${srcdir}/test.pl < ${srcdir}/tests.conf

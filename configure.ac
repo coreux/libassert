@@ -12,7 +12,7 @@
 ##  See the License for the specific language governing permissions and
 ##  limitations under the License.
 
-AC_INIT([libassert],[master],[https://github.com/coreux/liberrno/issues],,[https://github.com/coreux/liberrno])
+AC_INIT([libassert],[master],[https://github.com/coreux/libassert/issues],,[https://github.com/coreux/libassert])
 AC_CONFIG_AUX_DIR([.])
 AC_CONFIG_MACRO_DIR([.])
 AM_INIT_AUTOMAKE([foreign])
